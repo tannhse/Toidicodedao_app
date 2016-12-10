@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:id="@+id/item_navigation_drawer_newpost"
+            android:icon="@drawable/ic_inbox_black_24dp"
+            android:title="Bài viết mới" />
+        <item
+            android:id="@+id/item_navigation_drawer_coding"
+            android:icon="@drawable/ic_action_toggle_star"
+            android:title="Chuyện coding" />
+        <item
+            android:id="@+id/item_navigation_drawer_carrier"
+            android:icon="@drawable/ic_action_content_send"
+            android:title="Chuyện nghề nghiệp" />
+        <item
+            android:id="@+id/item_navigation_drawer_stories"
+            android:icon="@drawable/ic_action_content_drafts"
+            android:title="Chuyện linh tinh" />
+        <item
+            android:id="@+id/item_navigation_drawer_knowledge"
+            android:icon="@drawable/ic_action_content_drafts"
+            android:title="Kiến thức cần biết" />
+    </group>
+
+    <item android:title="Tùy chọn">
+        <menu>
+            <item
+                android:id="@+id/item_navigation_drawer_settings"
+                android:icon="@drawable/ic_action_action_settings"
+                android:title="Hiệu chỉnh" />
+            <item
+                android:id="@+id/item_navigation_drawer_help_and_feedback"
+                android:icon="@drawable/ic_action_content_report"
+                android:title="Phản hồi" />
+            <item
+                android:id="@+id/item_navigation_drawer_about_us"
+                android:icon="@drawable/ic_action_action_help"
+                android:title="Về chúng tôi" />
+        </menu>
+    </item>
+
+</menu>
