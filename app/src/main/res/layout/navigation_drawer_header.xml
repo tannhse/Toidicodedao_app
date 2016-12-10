@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center_vertical"
-            android:text="Desarrollador Android"
+            android:text="Tôi đi code dạo"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <TextView
