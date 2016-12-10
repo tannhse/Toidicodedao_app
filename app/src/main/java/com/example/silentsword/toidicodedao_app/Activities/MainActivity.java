@@ -1,4 +1,4 @@
-package com.example.silentsword.toidicodedao_app;
+package com.example.silentsword.toidicodedao_app.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import com.example.silentsword.toidicodedao_app.Fragments.CodingFragment;
 import com.example.silentsword.toidicodedao_app.Fragments.KnowledgeFragment;
 import com.example.silentsword.toidicodedao_app.Fragments.NewPostFragment;
 import com.example.silentsword.toidicodedao_app.Fragments.StoriesFragment;
+import com.example.silentsword.toidicodedao_app.R;
 
 public class MainActivity extends AppCompatActivity {
 

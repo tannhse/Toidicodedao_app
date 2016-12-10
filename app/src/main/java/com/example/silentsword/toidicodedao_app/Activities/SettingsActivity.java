@@ -1,4 +1,4 @@
-package com.example.silentsword.toidicodedao_app;
+package com.example.silentsword.toidicodedao_app.Activities;
 
 
 import android.os.Build;
@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.silentsword.toidicodedao_app.R;
 
 public class SettingsActivity extends AppCompatActivity {
 

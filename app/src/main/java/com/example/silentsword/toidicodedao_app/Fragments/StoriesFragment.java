@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.silentsword.toidicodedao_app.MainActivity;
+import com.example.silentsword.toidicodedao_app.Activities.MainActivity;
 import com.example.silentsword.toidicodedao_app.R;
 
 /**
