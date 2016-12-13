@@ -14,8 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.silentsword.toidicodedao_app.Fragments.AboutUsFragment;
 import com.example.silentsword.toidicodedao_app.Fragments.CarrierFragment;
 import com.example.silentsword.toidicodedao_app.Fragments.CodingFragment;
+import com.example.silentsword.toidicodedao_app.Fragments.FeedbackFragment;
 import com.example.silentsword.toidicodedao_app.Fragments.KnowledgeFragment;
 import com.example.silentsword.toidicodedao_app.Fragments.NewPostFragment;
 import com.example.silentsword.toidicodedao_app.Fragments.StoriesFragment;
@@ -103,19 +105,19 @@ public class MainActivity extends AppCompatActivity {
                                 return true;
                             case R.id.item_navigation_drawer_settings:
                                 menuItem.setChecked(true);
-                                Toast.makeText(MainActivity.this, "Launching " + menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(MainActivity.this, "Launching " + menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
                                 drawerLayout.closeDrawer(GravityCompat.START);
                                 Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                                 startActivity(intent);
                                 return true;
                             case R.id.item_navigation_drawer_help_and_feedback:
                                 menuItem.setChecked(true);
-                                Toast.makeText(MainActivity.this, menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                                setFragment(5);
                                 drawerLayout.closeDrawer(GravityCompat.START);
                                 return true;
                             case R.id.item_navigation_drawer_about_us:
                                 menuItem.setChecked(true);
-                                Toast.makeText(MainActivity.this, menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                                setFragment(6);
                                 drawerLayout.closeDrawer(GravityCompat.START);
                                 return true;
 
@@ -162,6 +164,20 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction = fragmentManager.beginTransaction();
                 KnowledgeFragment knowledgeFragment = new KnowledgeFragment();
                 fragmentTransaction.replace(R.id.fragment, knowledgeFragment);
+                fragmentTransaction.commit();
+                break;
+            case 5:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                FeedbackFragment feedbackFragment = new FeedbackFragment();
+                fragmentTransaction.replace(R.id.fragment, feedbackFragment);
+                fragmentTransaction.commit();
+                break;
+            case 6:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                AboutUsFragment aboutUsFragment = new AboutUsFragment();
+                fragmentTransaction.replace(R.id.fragment, aboutUsFragment);
                 fragmentTransaction.commit();
                 break;
         }
