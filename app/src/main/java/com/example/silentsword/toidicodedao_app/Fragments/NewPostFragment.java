@@ -12,6 +12,7 @@ import com.example.silentsword.toidicodedao_app.Activities.MainActivity;
 import com.example.silentsword.toidicodedao_app.DataObject.PostDTO;
 import com.example.silentsword.toidicodedao_app.R;
 import com.example.silentsword.toidicodedao_app.Ultilities.GlobalVariables;
+import com.example.silentsword.toidicodedao_app.Ultilities.LinkRemover;
 import com.example.silentsword.toidicodedao_app.Ultilities.ServiceConnector;
 
 import org.json.JSONArray;
@@ -21,6 +22,7 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.zip.DataFormatException;
 
@@ -60,9 +62,13 @@ public class NewPostFragment extends Fragment {
         if (response != null) {
             try {
                 //JSONObject object = new JSONObject(response);
-                System.out.println(response);
+
                 postOBJ = PostDTO.parseJSONToString(response);
                 ((TextView) view.findViewById(R.id.newPost)).setText(postOBJ.getPostContent());
+                ArrayList listLink = LinkRemover.linksList(postOBJ.getPostContent());
+                for (int i=0; i < listLink.size(); i++) {
+                    System.out.println(listLink.get(i).toString());
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
