@@ -1,6 +1,12 @@
 package com.example.silentsword.toidicodedao_app.DataObject;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -8,90 +14,117 @@ import java.util.Date;
  */
 
 public class PostDTO implements Serializable{
-    private static int postID;
-    private static int siteID;
-    private static Date releaseDate;
-    private static Date modifiedDate;
-    private static String postTitle;
-    private static String postURL;
-    private static String shortURL;
-    private static String postContent;
+    private int postID;
+    private int siteID;
+    private String releaseDate;
+    private String modifiedDate;
+    private String postTitle;
+    private String postURL;
+    private String shortURL;
+    private String postContent;
 
     public PostDTO() {
     }
 
-    public PostDTO(int postID, int siteID, Date releaseDate, Date modifiedDate, String title, String url, String shortURL, String content) {
-        this.postID = postID;
-        this.siteID = siteID;
-        this.releaseDate = releaseDate;
-        this.modifiedDate = modifiedDate;
-        this.postTitle = title;
-        this.postURL = url;
-        this.shortURL = shortURL;
-        this.postContent = content;
+    public PostDTO(int postID, int siteID, String releaseDate, String modifiedDate, String title, String url, String shortURL, String content) {
+        this.setPostID(postID);
+        this.setSiteID(siteID);
+        this.setReleaseDate(releaseDate);
+        this.setModifiedDate(modifiedDate);
+        this.setPostTitle(title);
+        this.setPostURL(url);
+        this.setShortURL(shortURL);
+        this.setPostContent(content);
     }
 
-    public static int getPostID() {
+
+
+    public static PostDTO parseJSONToString(String jsonString) throws JSONException{
+        PostDTO post;
+        JSONObject obj = new JSONObject(jsonString);
+        int postID;
+        int siteID;
+        String postDate;
+        String modifiedDate;
+        String postTitle;
+        String postURL;
+        String shortURL;
+        String postContent;
+
+        postID = obj.getInt("ID");
+        siteID = obj.getInt("site_ID");
+        postDate = obj.getString("date");
+        modifiedDate = obj.getString("modified");
+        postTitle = obj.getString("title");
+        postURL = obj.getString("URL");
+        shortURL = obj.getString("short_URL");
+        postContent = obj.getString("content");
+
+        return new PostDTO(postID, siteID, postDate, modifiedDate, postTitle, postURL, shortURL, postContent);
+    }
+
+
+    public int getPostID() {
         return postID;
     }
 
-    public static void setPostID(int postID) {
-        PostDTO.postID = postID;
+    public void setPostID(int postID) {
+        this.postID = postID;
     }
 
-    public static int getSiteID() {
+    public int getSiteID() {
         return siteID;
     }
 
-    public static void setSiteID(int siteID) {
-        PostDTO.siteID = siteID;
+    public void setSiteID(int siteID) {
+        this.siteID = siteID;
     }
 
-    public static Date getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public static void setReleaseDate(Date releaseDate) {
-        PostDTO.releaseDate = releaseDate;
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    public static Date getModifiedDate() {
+    public String getModifiedDate() {
         return modifiedDate;
     }
 
-    public static void setModifiedDate(Date modifiedDate) {
-        PostDTO.modifiedDate = modifiedDate;
+    public void setModifiedDate(String modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 
-    public static String getPostTitle() {
+    public String getPostTitle() {
         return postTitle;
     }
 
-    public static void setPostTitle(String postTitle) {
-        PostDTO.postTitle = postTitle;
+    public void setPostTitle(String postTitle) {
+        this.postTitle = postTitle;
     }
 
-    public static String getPostURL() {
+    public String getPostURL() {
         return postURL;
     }
 
-    public static void setPostURL(String postURL) {
-        PostDTO.postURL = postURL;
+    public void setPostURL(String postURL) {
+        this.postURL = postURL;
     }
 
-    public static String getShortURL() {
+    public String getShortURL() {
         return shortURL;
     }
 
-    public static void setShortURL(String shortURL) {
-        PostDTO.shortURL = shortURL;
+    public void setShortURL(String shortURL) {
+        this.shortURL = shortURL;
     }
 
-    public static String getPostContent() {
+    public String getPostContent() {
         return postContent;
     }
 
-    public static void setPostContent(String postContent) {
-        PostDTO.postContent = postContent;
+    public void setPostContent(String postContent) {
+        this.postContent = postContent;
     }
 }
